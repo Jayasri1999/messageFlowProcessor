@@ -1,5 +1,6 @@
 # Message Flow Processor
 Process:
+
 ->Store scenarios in MySQL db with scenario, country, instance, entry_process, transform_process, exit_process, xslt_content data.
 
 ->Send XML data to Apache Active Message Queue. The queue will be in the format of scenario.country.instance.in (eg:sc1.US.1.in).
@@ -16,9 +17,10 @@ Process:
 
 ->Outbound Adapter consumes data from outbound.in queue and sends payload to output queue which is in the format of scenario.country.instance.out (eg:sc1.US.1.out)
 
+
 Steps:
 
-Steps: -> To run Active MQ: docker run -d --name activemq -p 8161:8161 -p 61616:61616 rmohr/activemq
+-> To run Active MQ: docker run -d --name activemq -p 8161:8161 -p 61616:61616 rmohr/activemq
 
 -> To access Active MQ: http://localhost:8161/admin username:admin & password:admin
 
