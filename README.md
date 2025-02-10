@@ -31,9 +31,10 @@ Steps:
 -> Run the application mvn spring-boot:run
 
 -> Run the following command for Windows:
-
+```
 $creds = Get-Credential -Credential admin
 
 Invoke-WebRequest -Uri "http://localhost:8161/api/message/sc1.US.1.in?type=queue"  -Method Post  -Body '<order><id>12345</id><customer>Jayasri</customer><amount>250.00</amount></order>'  -ContentType "text/xml"  -Credential $creds
+```
 
 -> We can observe the results in ActiveMQ web console under "Queues" tab.
